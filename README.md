@@ -31,7 +31,6 @@ bios-analytics/
 ├── requirements.txt        # Dependencies  
 └── README.md               # Project overview  
 
-Contributing
 We welcome contributions from developers, researchers, and healthcare professionals.
 
 Fork the repository.
@@ -45,7 +44,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Contact
 For questions, collaboration, or support:
 
-Email: your-email@example.com
-LinkedIn: Your Name
+Email: natkubia@gmail.com
+LinkedIn: Nathan Kubia
 Join us in building a smarter, healthier future through innovation, data, and natural medicine.
 

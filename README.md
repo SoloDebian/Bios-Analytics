@@ -1,4 +1,4 @@
-Bios Analytics
+Bios Analytics: 
 Revolutionizing Healthcare with Data, Innovation, and Natural Medicine
 
 Overview

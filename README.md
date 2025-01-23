@@ -45,6 +45,8 @@ Contact
 For questions, collaboration, or support:
 
 Email: natkubia@gmail.com
+
 LinkedIn: Nathan Kubia
+
 Join us in building a smarter, healthier future through innovation, data, and natural medicine.
 

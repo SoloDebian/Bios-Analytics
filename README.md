@@ -1,7 +1,7 @@
 Bios Analytics: 
 Revolutionizing Healthcare with Data, Innovation, and Natural Medicine
 
-Overview
+Overview:
 Bios Analytics is a transformative initiative at the intersection of data science, natural medicine, and technology. Our goal is to leverage the power of data-driven research to develop integrated healthcare systems, modernize clinical practices, and drive innovation in natural medicine and pharmaceuticals.
 
 This repository contains the foundational resources, frameworks, and codebase for building the tools and solutions that will define the future of healthcare.

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bios Analytics - Healthcare Data Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h1>Bios Analytics</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                    <a href="#data" class="nav-link" data-section="data">
+                        <i class="fas fa-database"></i> Data
+                    </a>
+                    <a href="#analytics" class="nav-link" data-section="analytics">
+                        <i class="fas fa-microscope"></i> Analytics
+                    </a>
+                    <a href="#api" class="nav-link" data-section="api">
+                        <i class="fas fa-code"></i> API Docs
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Healthcare Analytics Dashboard</h2>
+                    <p>Real-time insights for natural medicine research and healthcare data analysis</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="total-items">0</h3>
+                                <p>Research Items</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Natural</h3>
+                                <p>Medicine Focus</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Live</h3>
+                                <p>Analytics</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Clinical</h3>
+                                <p>Research</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="chart-container">
+                        <h3>Research Data Visualization</h3>
+                        <canvas id="dataChart"></canvas>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="activity-container">
+                        <h3>Recent Research Activity</h3>
+                        <div class="activity-list" id="activity-list">
+                            <div class="activity-item">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>System initialized</span>
+                                <time>Just now</time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Section -->
+            <section id="data" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-database"></i> Research Data Management</h2>
+                    <p>Manage and explore your healthcare research datasets</p>
+                </div>
+                
+                <div class="data-controls">
+                    <button class="btn btn-primary" onclick="loadData()">
+                        <i class="fas fa-sync"></i> Refresh Data
+                    </button>
+                    <button class="btn btn-secondary" onclick="addNewItem()">
+                        <i class="fas fa-plus"></i> Add Research Item
+                    </button>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table-body">
+                            <tr>
+                                <td colspan="5" class="loading">Loading research data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-microscope"></i> Advanced Analytics</h2>
+                    <p>Deep insights and statistical analysis for healthcare research</p>
+                </div>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Data Distribution</h3>
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Trend Analysis</h3>
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Research Metrics</h3>
+                        <div class="metrics-list">
+                            <div class="metric">
+                                <span class="metric-label">Data Quality Score</span>
+                                <span class="metric-value">95%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Analysis Accuracy</span>
+                                <span class="metric-value">98.2%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Research Completeness</span>
+                                <span class="metric-value">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Documentation Section -->
+            <section id="api" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-code"></i> API Documentation</h2>
+                    <p>Explore and test the Bios Analytics API endpoints</p>
+                </div>
+                
+                <div class="api-container">
+                    <div class="api-info">
+                        <h3>Available Endpoints</h3>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/items/</span>
+                            <span class="description">Retrieve all research items</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/docs</span>
+                            <span class="description">Interactive API documentation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="api-tester">
+                        <h3>API Tester</h3>
+                        <div class="test-controls">
+                            <select id="endpoint-select">
+                                <option value="/items/">GET /items/</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="testEndpoint()">
+                                <i class="fas fa-play"></i> Test API
+                            </button>
+                        </div>
+                        <div class="response-container">
+                            <h4>Response:</h4>
+                            <pre id="api-response">Click "Test API" to see response</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="swagger-link">
+                        <a href="/docs" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> Open Full API Documentation
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="spinner"></div>
+            <p>Loading healthcare data...</p>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

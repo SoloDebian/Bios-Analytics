@@ -1,6 +1,6 @@
 class BiosAnalyticsApp {
     constructor() {
-        this.apiBaseUrl = 'https://code-efficiency-reporter-tunnel-z4lvajnr.devinapps.com';
+        this.apiBaseUrl = 'https://code-efficiency-reporter-tunnel-mg4infov.devinapps.com';
         this.currentSection = 'dashboard';
         this.data = {
             items: [],

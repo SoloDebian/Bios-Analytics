@@ -1,7 +1,18 @@
-from fastapi import FastAPI, HTTPException
+import logging
+from fastapi import FastAPI
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 # Initialize the FastAPI application
-app = FastAPI()
+app = FastAPI(
+    title="Bios Analytics API",
+    description="A healthcare analytics API for data-driven medical insights",
+    version="1.0.0"
+)
 
 # In-memory storage for items
 items = {
@@ -9,14 +20,11 @@ items = {
     2: {"name": "Item Two", "description": "This is the second item."}
 }
 
-# Print registered routes (for debugging)
-print("Routes registered before adding endpoints:", app.routes)
+logger.info("Bios Analytics API initialized successfully")
 
 # Define the /items/ route
-@app.get("/items/")
+@app.get("/items/", summary="Get all items", description="Retrieve all items from the in-memory storage")
 def get_items():
+    logger.info("Items endpoint accessed")
     return items
-
-# Print registered routes after adding endpoints (for debugging)
-print("Routes registered after adding endpoints:", app.routes)
 

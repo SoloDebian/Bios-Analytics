@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "bios-analytics"
+version = "1.0.0"
+description = "A healthcare analytics API for data-driven medical insights"
+authors = ["Devin AI <devin-ai-integration[bot]@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0"
+pydantic = "^2.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

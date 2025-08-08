@@ -1,6 +1,6 @@
 class BiosAnalyticsApp {
     constructor() {
-        this.apiBaseUrl = 'https://user:b346c06051b2768283a5185aa8333ac6@code-efficiency-reporter-tunnel-4oc8g94i.devinapps.com';
+        this.apiBaseUrl = 'https://code-efficiency-reporter-tunnel-z4lvajnr.devinapps.com';
         this.currentSection = 'dashboard';
         this.data = {
             items: [],
@@ -438,7 +438,7 @@ class BiosAnalyticsApp {
                 response = await fetch(`${this.apiBaseUrl}/research/items/${this.currentEditId}`, {
                     method: 'PUT',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
@@ -446,7 +446,7 @@ class BiosAnalyticsApp {
                 response = await fetch(`${this.apiBaseUrl}/research/items/`, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
@@ -478,7 +478,7 @@ class BiosAnalyticsApp {
 
         try {
             const response = await fetch(`${this.apiBaseUrl}/research/items/${this.currentDeleteId}`, {
-                method: 'DELETE'
+                method: 'DELETE',
             });
 
             if (!response.ok) {
